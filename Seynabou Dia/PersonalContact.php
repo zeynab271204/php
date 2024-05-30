@@ -1,9 +1,11 @@
 <?php
+session_start();
 require_once 'DbConnect.php';
 
 $db = new DbConnect();
 $conn = $db->connect();
 
+//Bouton enregistrer
 if (isset($_POST['UserSave'])) {
     $nom = $_POST['LastName'];
     $prenom = $_POST['FirstName'];
@@ -22,8 +24,10 @@ if (isset($_POST['UserSave'])) {
     echo "<script>alert('Enregistrement effectué avec succès')</script>";
 }
 
+//Bouton supprimer
 if (isset($_POST['UserDelete'])) {
     $id = $_POST['Id'];
+    //Confirmation avec JS
     $stmt = $conn->prepare("DELETE FROM UserTable WHERE Id = :id");
     $stmt->bindParam(':id', $id);
     $stmt->execute();
@@ -31,6 +35,7 @@ if (isset($_POST['UserDelete'])) {
     echo "<script>alert('Enregistrement supprimé avec succès')</script>";
 }
 
+//Bouton modifier 
 if (isset($_POST['UserEdit'])) {
     $id = $_POST['Id'];
     $nom = $_POST['LastName'];
@@ -62,6 +67,11 @@ if (isset($_POST['UserEdit'])) {
 </head>
 <body>
     <h1>UserSave</h1>
+    <form method="post"  action="edit.php">
+        <input type="number" name="Id" >
+    <button  name="UserEdit">Rechercher</button>
+   
+</form>
     <form method="POST" action="">
         <label for="LastName">Nom :</label><br>
         <input type="text" id="LastName" name="LastName" required><br>
@@ -76,6 +86,9 @@ if (isset($_POST['UserEdit'])) {
         <button type="submit" name="UserSave">Enregistrer</button>
     </form>
 
+    <?php 
+    //Pour afficher les donnees dans le tableau
+    ?>
     <h1>Afficher Contacts</h1>
     <table>
         <tr>

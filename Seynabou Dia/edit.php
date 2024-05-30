@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'DbConnect.php';
 
 $db = new DbConnect();
@@ -10,6 +11,13 @@ if (isset($_POST['UserEdit'])) {
     $stmt->bindParam(':id', $id);
     $stmt->execute();
     $contact = $stmt->fetch(PDO::FETCH_ASSOC);
+    if(!$contact){
+    echo "<script langage='js'> alert('User not found')</script>";
+    
+   // header("location:PersonalContact.php");
+   echo "<script langage='js'> document.location.href='PersonalContact.php'</script>";
+
+    }
 }
 if (isset($_POST['UserUpdate'])) {
     $id = $_POST['Id'];
