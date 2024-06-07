@@ -68,6 +68,7 @@ echo "Notre dernier cours de PHP";
 echo "bonjour abdellatif";
 echo "hi everybody";
 echo "Salam les gens";
+echo "Notre dernier cours de PHP";
 ?>
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
