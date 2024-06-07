@@ -45,6 +45,9 @@
     </style>
 </head>
 <body>
+<?php
+echo "Notre dernier cours de PHP";
+?>
     <div id="calculator">
         <h2>Calculatrice</h2>
         <form method="post" action="">
