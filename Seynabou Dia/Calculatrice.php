@@ -70,7 +70,7 @@ echo "hi everybody";
 echo "Salam les gens";
 echo "Notre dernier cours de PHP";
 echo "welcome to Senegal";
-
+echo "Salam population";
 ?>
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
