@@ -63,6 +63,7 @@
         </form>
 <?php
 echo "bonjour abdellatif";
+echo "hi everybody";
 ?>
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
