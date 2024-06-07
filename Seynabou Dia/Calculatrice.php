@@ -61,7 +61,9 @@
             <input type="text" id="num2" name="num2">
             <button type="submit">Calculer</button>
         </form>
-
+<?php
+echo "bonjour abdellatif";
+?>
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $num1 = $_POST["num1"];
