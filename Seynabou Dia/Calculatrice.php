@@ -64,6 +64,7 @@
 <?php
 echo "bonjour abdellatif";
 echo "hi everybody";
+echo "Salam les gens";
 ?>
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
